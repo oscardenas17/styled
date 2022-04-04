@@ -17,12 +17,22 @@ const Button = styled.button`
   border: solid 2px red;
   border-radius; 4px;
 `
+
+const BlockButton = styled(Button)`
+  width: 100%;
+  fonts-size: 24px;
+`
+
 function App() {
 
   return (
     <Content>
       <P>Hola soy un parrafo</P>
       <Button primary>Enviar</Button>
+     
+      <BlockButton primary>Enviar2</BlockButton> 
+      
+      <BlockButton primary as="a" href="#"> Enviar como link a</BlockButton> 
     </Content>
   );
 }
