@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components";
 
+
+const  P = styled.p`
+  font-size: 24px;
+  color: red;
+`
+
+const Content = styled.div`
+  padding: 20px 25px;
+`
+
+const Button = styled.button`
+  background-color: ${props => props.primary ? 'red': 'white'};
+  color: ${props => props.primary ? 'white': 'red'};
+  padding: 10px 15px;
+  border: solid 2px red;
+  border-radius; 4px;
+`
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Content>
+      <P>Hola soy un parrafo</P>
+      <Button primary>Enviar</Button>
+    </Content>
   );
 }
 
