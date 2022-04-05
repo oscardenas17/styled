@@ -47,6 +47,32 @@ const StyledLink = styled(Link)`
   color: blue;
 `
 
+//componente con propiedad pasada type y classname
+//const Input = ({className}) =>{
+//  return <input type="text" className={className}> </input>
+//}
+
+//componente de arriba con styled COmponent
+//propiedades
+const Input = styled.input.attrs(props => ({
+  type: 'text',
+  color: props.color || 'red'
+})) //estilos ``
+` 
+  font-size: 20px;
+  border: 1px solid red;
+  color: ${props => props.color};
+`
+
+//cambiar propo type del input
+const Password = styled(Input).attrs({
+  type:'password'
+})`
+font-size: 15px;
+border: 1px solid green;
+
+`
+
 function App() {
 
   return (
@@ -66,6 +92,10 @@ function App() {
       <Link> link </Link>
 
       <StyledLink> LInk con estyle component</StyledLink>
+
+      <Input></Input>
+      {/* //<Input color='green' /> */}
+      <Password />
 
     </Content>
   );
